@@ -1,0 +1,23 @@
+.page { padding: 0; }
+.banner.error {
+  background: #ffe6e6; color: #b00020; border-bottom: 1px solid #ffb3b3; padding: 10px 16px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 340px;
+}
+.menu-area {
+  padding: 12px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 12px;
+}
+.pay-methods { display: flex; gap: 16px; }
+@media (max-width: 1280px) {
+  .menu-grid { grid-template-columns: repeat(1, minmax(240px, 1fr)); }
+}
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+}

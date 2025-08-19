@@ -1,0 +1,20 @@
+.menu-item-card {
+  border: 1px solid var(--border-color, #e9ecef);
+  background: var(--bg-primary, #fff);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.menu-item-card .title { font-weight: 800; }
+.menu-item-card .desc { font-size: 13px; opacity: .8; margin-top: 4px; }
+.menu-item-card .price { margin-top: 6px; color: var(--accent, #388E3C); font-weight: 700; }
+.menu-item-card .actions { display: flex; align-items: center; gap: 12px; }
+.menu-item-card .qty { display: flex; align-items: center; gap: 6px; }
+.menu-item-card .qty button {
+  width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--border-color, #e9ecef);
+  background: var(--bg-secondary, #f8f9fa); cursor: pointer;
+}
+.menu-item-card .qty input { width: 48px; padding: 6px; border-radius: 6px; border: 1px solid var(--border-color, #e9ecef); }
+.menu-item-card .btn { background: var(--button-bg, #FF6F00); color: #fff; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 700;}

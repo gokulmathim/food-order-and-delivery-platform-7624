@@ -1,0 +1,76 @@
+/* Theme Variables (using provided colors) */
+:root {
+  --primary: #FF6F00;
+  --secondary: #FFA000;
+  --accent: #388E3C;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #1A1A1A;
+  --text-secondary: #5c5c5c;
+  --border-color: #e9ecef;
+  --button-bg: var(--primary);
+  --button-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #f1f1f1;
+  --text-secondary: #c7c7c7;
+  --border-color: #2a2a2a;
+  --button-bg: #e56a00;
+  --button-text: #ffffff;
+}
+
+html, body, #root {
+  height: 100%;
+}
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+a { color: var(--primary); }
+
+/* Utility */
+.container { width: min(1200px, 94vw); margin: 0 auto; }
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+/* Buttons */
+.btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+.btn.secondary {
+  background: var(--secondary);
+  color: #000;
+}
+
+/* Helpers */
+.muted { color: var(--text-secondary); font-size: 14px; }
+
+/* Simple base layout spacing */
+.page { padding-top: 12px; }
+
+/* reset */
+* { box-sizing: border-box; }
+input, button { font: inherit; }
+
+@media (prefers-reduced-motion: no-preference) {
+}

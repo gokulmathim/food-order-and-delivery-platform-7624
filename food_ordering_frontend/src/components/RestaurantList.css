@@ -1,0 +1,39 @@
+.restaurant-list {
+  min-width: 240px;
+  max-width: 280px;
+  padding: 12px;
+  border-right: 1px solid var(--border-color, #e9ecef);
+}
+.section-title {
+  margin: 8px 0 12px;
+  font-size: 16px;
+}
+.restaurant-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.restaurant-list li {
+  margin-bottom: 8px;
+}
+.restaurant-list li button {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border-color, #e9ecef);
+  background: var(--bg-primary, #fff);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.restaurant-list li.active button {
+  border-color: var(--button-bg, #FF6F00);
+  box-shadow: 0 0 0 2px rgba(255,111,0,0.15);
+}
+.restaurant-list .name { font-weight: 700; }
+.restaurant-list .meta { font-size: 12px; opacity: .7; }
+
+@media (max-width: 1024px) {
+  .restaurant-list {
+    display: none;
+  }
+}

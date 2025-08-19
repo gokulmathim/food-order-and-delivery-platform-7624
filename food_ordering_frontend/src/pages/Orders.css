@@ -1,0 +1,42 @@
+.orders-page { padding: 12px; }
+.orders-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 12px;
+}
+.orders-list {
+  border-right: 1px solid var(--border-color, #e9ecef);
+  padding-right: 12px;
+}
+.orders-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.orders-list li button {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border-color, #e9ecef);
+  background: var(--bg-primary, #fff);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.orders-list li.active button {
+  border-color: var(--button-bg, #FF6F00);
+  box-shadow: 0 0 0 2px rgba(255,111,0,0.15);
+}
+.orders-list .top { display: flex; justify-content: space-between; }
+.orders-list .id { font-weight: 700; }
+.orders-list .status { text-transform: capitalize; font-size: 12px; padding: 2px 6px; border-radius: 6px; background: var(--bg-secondary, #f2f2f2);}
+.order-details .card {
+  border: 1px solid var(--border-color, #e9ecef);
+  border-radius: 8px;
+  background: var(--bg-primary, #fff);
+  padding: 12px;
+}
+.order-details .items { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.order-details .items li { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; }
+.total { margin-top: 12px; font-size: 18px; }
+.banner.error { background: #ffe6e6; color: #b00020; border: 1px solid #ffb3b3; padding: 8px 10px; border-radius: 8px; margin-bottom: 8px; }
+
+@media (max-width: 900px) {
+  .orders-layout { grid-template-columns: 1fr; }
+  .orders-list { border-right: none; padding-right: 0; }
+}
