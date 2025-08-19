@@ -1,0 +1,23 @@
+.auth-wrapper {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.auth-form {
+  width: min(420px, 94vw);
+  background: var(--bg-primary, #fff);
+  border: 1px solid var(--border-color, #e9ecef);
+  border-radius: 12px;
+  padding: 20px;
+}
+.auth-form h2 { margin: 4px 0; }
+.auth-form .muted { opacity: .7; margin: 0 0 12px; }
+.auth-form label { display: block; margin: 8px 0 6px; font-weight: 600; }
+.auth-form input {
+  width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color, #e9ecef);
+  background: var(--bg-secondary, #f8f9fa);
+}
+.auth-form .btn { margin-top: 12px; width: 100%; }
+.auth-form .error {
+  background: #ffe6e6; color: #b00020; border: 1px solid #ffb3b3; padding: 8px 10px; border-radius: 8px; margin-bottom: 8px;
+}
