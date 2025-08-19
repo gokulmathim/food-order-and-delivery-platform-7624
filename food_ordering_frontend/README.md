@@ -1,82 +1,41 @@
-# Lightweight React Template for KAVIA
+# Food Ordering Frontend (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, minimalistic, responsive frontend for browsing restaurants and menus, managing a cart, authenticating users, placing orders, and viewing order history.
 
 ## Features
+- User authentication (login/register)
+- Restaurant list sidebar with search
+- Menu browsing per restaurant
+- Cart management (add/update/remove/clear)
+- Order placement with mock payment intent/confirmation
+- Order history and status
+- Responsive mobile/desktop layout
+- Vanilla CSS styling, no heavy UI libs
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+## Environment Variables
+Copy `.env.example` to `.env` and adjust:
+- `REACT_APP_API_BASE`: Backend API base URL (default `http://localhost:3001`)
 
-## Getting Started
+Do NOT commit secrets. The orchestrator will set env vars for deployments.
 
-In the project directory, you can run:
+## Development
+- `npm start` — run dev server at http://localhost:3000
+- `npm test` — run tests
+- `npm run build` — production build
 
-### `npm start`
+## Backend API
+This app integrates with the provided backend OpenAPI.
+Key endpoints: `/auth/register`, `/auth/login`, `/auth/me`, `/restaurants`, `/restaurants/{id}/menu`, `/cart`, `/cart/items`, `/orders`, `/payments/intents`, `/payments/confirm`.
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
+- `src/services/api.js` — API client abstraction
+- `src/context/AuthContext.js` — auth state and helpers
+- `src/context/CartContext.js` — cart state and helpers
+- `src/components/` — Header, Sidebar, CartPanel
+- `src/pages/` — HomePage, LoginPage, RegisterPage, OrdersPage, RestaurantPage
+- `src/App.js` — wiring contexts and routes
+- `src/App.css` — theme, layout, responsive styles
 
-### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+- Some backend response shapes may vary; the UI normalizes where possible.
+- For checkout, this frontend uses a mock payment flow via `payments/*` endpoints.
