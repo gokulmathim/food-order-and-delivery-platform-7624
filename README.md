@@ -1,1 +1,3 @@
-# food-order-and-delivery-platform-7624
+# Project Repository
+
+This is the initial README file for the project.
